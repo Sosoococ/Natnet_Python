@@ -35,8 +35,8 @@ if __name__ == "__main__":
     optitrack_server_address = "127.0.0.1"
     
     #if setup using ip in motive 3.0.1
-    # client_address = "192.168.1.10"
-    # optitrack_server_address = "192.168.1.71"
+    # client_address = "192.168.0.1"
+    # optitrack_server_address = "192.168.0.2"
     
     #if setup using ethernet cable and ip in motive 3.0.1
     # client_address = "169.254.75.254"

@@ -9,10 +9,9 @@ from multiprocessing import Process, Queue, Event
 
 
 class OptitrackProcess(Process):
-    def __init__(self, client_address="127.0.0.1", server_address="127.0.0.1", frequency=60, robot_ids=[1], show=False, optitrack_queue=None, uav_queue = None, stop_event=None):
+    def __init__(self, client_address="127.0.0.1", server_address="127.0.0.1", frequency=60, robot_ids=[1], show=False, optitrack_queue=None, stop_event=None):
         super(OptitrackProcess, self).__init__()
         self.optitrack_queue = optitrack_queue
-        self.uav_queue = uav_queue
         self.client_address = client_address
         self.server_address = server_address
         self.frequency = frequency
@@ -24,7 +23,7 @@ class OptitrackProcess(Process):
         
 
     def run(self):
-        optitrack = Optitrack(self.client_address, self.server_address, self.frequency, self.optitrack_queue, self.uav_queue)
+        optitrack = Optitrack(self.client_address, self.server_address, self.frequency, self.optitrack_queue)
         try:
             while not self.stop_event.is_set():
                 if self.stop_stream:
