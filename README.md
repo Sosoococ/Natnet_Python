@@ -1,5 +1,5 @@
 # Natnet_Python
- Python Natnet Client for retrieving Optitrack data from Motive 3.0.1
+ Python Natnet Client for retrieving Optitrack data from Motive 3.0.1.
  It's now only available for rigidbody
 
 # Setup
