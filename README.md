@@ -24,6 +24,6 @@
      $ python optitrack_thread_test.py
     ``
 
-# Note: 
-It is now available for Linux or Windows, for other system, please modify the line from 280 to 284 of the **NatNetClient.py**
+# Note 
+It is now available for Linux or Windows. For other system, please modify the line from 280 to 284 of the **NatNetClient.py**
 ``result.bind((self.local_ip_address, port))`` for ``result.bind((self.multicast_address, port))``
