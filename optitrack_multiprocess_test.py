@@ -43,16 +43,16 @@ if __name__ == "__main__":
     # optitrack_server_address = "169.254.75.253"
     
     print(client_address,optitrack_server_address)
-    robot_id = [1,2,3,4] #target streaming rigidbody ids (lookup in motive app)
+    robot_ids = [1,2,3,4] #target streaming rigidbody ids (lookup in motive app)
     frequency = 120
-    optitrack_queue = Queue(maxsize=len(robot_id)) #set maxsize to clean Queue (Queue was FIFO just clean it to reduce the delay time)
+    optitrack_queue = Queue(maxsize=len(robot_ids)) #set maxsize to clean Queue (Queue was FIFO just clean it to reduce the delay time)
     
     stop_print = Event()
     stop_opti = Event()
     stop_plot = Event()
     
     #OptitrackProcess print the data from natnet client if show = True
-    optitrack_process  = OptitrackProcess(client_address, optitrack_server_address, frequency, robot_id, show=False, optitrack_queue=optitrack_queue, stop_event= stop_opti)
+    optitrack_process  = OptitrackProcess(client_address, optitrack_server_address, frequency, robot_ids, show=False, optitrack_queue=optitrack_queue, stop_event= stop_opti)
     
     print_process = PrintProcess(optitrack_queue, frequency, stop_print)
     # plot_process = RealTimePlot3D(optitrack_queue, frequency, stop_plot)  #not available now
