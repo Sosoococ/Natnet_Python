@@ -26,9 +26,11 @@
 
 # Note 
 It is now available for Linux or Windows. For other system, please modify the line from 280 to 284 of the **NatNetClient.py**
+
 ```
-    try:
-        if platform == "linux" or platform == "linux2":
-            result.bind((self.multicast_address, port))
-        elif platform == "win32":
-            result.bind((self.local_ip_address, port))```
+try:
+    if platform == "linux" or platform == "linux2":
+        result.bind((self.multicast_address, port))
+    elif platform == "win32":
+        result.bind((self.local_ip_address, port))
+```
